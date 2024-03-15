@@ -1,0 +1,35 @@
+[33mcommit 08b64f401e6253bd314ed2e695d8aa6a1039c73a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Filipe de Bianchi Andrade <fbianchi.andrade@gmail.com>
+Date:   Fri Mar 15 17:57:11 2024 -0300
+
+    modificadas as importacoes
+
+[33mcommit 2b4400cc87b4a1e94daef41327a5a7a4bed9ce78[m[33m ([m[1;31morigin/teste[m[33m, [m[1;32mteste[m[33m)[m
+Author: Filipe de Bianchi Andrade <fbianchi.andrade@gmail.com>
+Date:   Fri Mar 15 17:44:39 2024 -0300
+
+    metodo sort funcionando corretamente // token da api agora esta em um arquivo .env na pasta raiz do projeto
+
+[33mcommit 6fd3af504fcbad035c7ef525a867aedb77de8388[m
+Author: Filipe de Bianchi Andrade <fbianchi.andrade@gmail.com>
+Date:   Fri Mar 15 17:07:57 2024 -0300
+
+    adicionadas novas classes User, ProjectList e record RepoData para uso futuro
+
+[33mcommit e66aec0b5aa4cdaec893ca113da7bc87ee653299[m
+Author: Filipe de Bianchi Andrade <fbianchi.andrade@gmail.com>
+Date:   Fri Mar 15 15:03:21 2024 -0300
+
+    implementado metodo compareTo da interface Comparable passando parametro Project
+
+[33mcommit 31112b0b74a233c6a3fd2c5e187a857d69e8ea1b[m
+Author: Filipe <fbianchi.andrade@gmail.com>
+Date:   Thu Mar 14 20:45:25 2024 -0300
+
+    adicionando comentarios para implementar metodo compareTo
+
+[33mcommit ccac9c30550f6b17f73a598f40a69482ea9b1684[m
+Author: Filipe <fbianchi.andrade@gmail.com>
+Date:   Thu Mar 14 20:42:34 2024 -0300
+
+    iniciando projeto github
