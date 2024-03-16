@@ -13,7 +13,11 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 ## Use
 
-To use the program, create a .env file in the main folder to save your github token. In the App.java file, change the user name to the profile name of the person who wants to get data from projects. Project data comes in the console.
+To use the program, create a .env file in the main folder to save your github token. 
+
+Create a folder named "lib" and put .tar archive of gson lib.
+
+In the App.java file, change the user name to the profile name of the person who wants to get data from projects. Project data comes in the console.
 
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
