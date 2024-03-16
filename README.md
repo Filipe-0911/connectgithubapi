@@ -13,7 +13,7 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 ## Use
 
-To use the program, create a .env file in the main folder to save your github token. 
+To use the program, create a .env file in the main folder to save your github token. To generate your token access, follow steps on this doc -> [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 Create a folder named "lib" and put .tar archive of gson lib.
 
