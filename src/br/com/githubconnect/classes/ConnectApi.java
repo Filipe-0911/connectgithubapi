@@ -5,6 +5,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import br.com.githubconnect.customexceptions.ConsultGitHubException;
+
 public class ConnectApi {
     private String url;
     private String json;
@@ -32,9 +34,16 @@ public class ConnectApi {
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            String json = response.body();
-            this.json = json;
+            String jsonReturned = response.body();
+            this.json = jsonReturned;
 
+            if(jsonReturned.contains("message")) {
+                System.out.println(this.getJson());
+                throw new ConsultGitHubException("User not found.");
+            }
+
+        } catch(IllegalArgumentException i) {
+            System.out.println("Verify UserName: " + i);
         } catch (Exception e) {
             System.out.println(e);
         }
