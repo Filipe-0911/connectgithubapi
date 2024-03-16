@@ -11,6 +11,10 @@ The workspace contains two folders by default, where:
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
+## Use
+
+To use the program, create a .env file in the main folder to save your github token. In the App.java file, change the user name to the profile name of the person who wants to get data from projects. Project data comes in the console.
+
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
 ## Dependency Management

@@ -34,7 +34,7 @@ public class App {
 
         String apiToken = properties.getProperty("API_TOKEN");
 
-        User newUser = new User("educez", apiToken);
+        User newUser = new User("Filipe-0911", apiToken);
 
         ConnectApi getRepos = new ConnectApi(newUser);
 
