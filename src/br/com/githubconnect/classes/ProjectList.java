@@ -9,10 +9,10 @@ import br.com.githubconnect.records.ProjectData;
 public class ProjectList extends ArrayList<Project>{
     ArrayList<Project> projectList;
 
-    public ProjectList(List<ProjectData> yourClassList, ConnectApi getRepos) {
+    public ProjectList(List<ProjectData> classList, ConnectApi getRepos) {
         projectList = new ArrayList<>();
 
-        _convertProjectDataToProject(yourClassList);
+        _convertProjectDataToProject(classList);
     }
 
     public void listProjects() {
@@ -29,11 +29,16 @@ public class ProjectList extends ArrayList<Project>{
         
     }
 
-    private void _convertProjectDataToProject(List<ProjectData> yourClassList) {
-        for (ProjectData project : yourClassList) {
-            Project pro = new Project(project);
+    private void _convertProjectDataToProject(List<ProjectData> classList) {
+        try {
+            for (ProjectData project : classList) {
+                Project pro = new Project(project);
+    
+                projectList.add(pro);
+            }
 
-            projectList.add(pro);
+        } catch (NullPointerException e) {
+            System.out.println("An error ocurred: " + e);
         }
         
     }

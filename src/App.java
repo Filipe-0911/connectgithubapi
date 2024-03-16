@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import br.com.githubconnect.customexceptions.ConsultGitHubException;
 import br.com.githubconnect.classes.ConnectApi;
 import br.com.githubconnect.classes.ProjectList;
 import br.com.githubconnect.classes.User;
@@ -33,23 +34,31 @@ public class App {
         }
 
         String apiToken = properties.getProperty("API_TOKEN");
-
-        User newUser = new User("Filipe-0911", apiToken);
-
-        ConnectApi getRepos = new ConnectApi(newUser);
-
-        Type listType = new TypeToken<ArrayList<ProjectData>>() {
-        }.getType();
-        Gson gson = new GsonBuilder()
-                .serializeNulls()
-                .create();
-
-        List<ProjectData> listBeforeConvert = gson.fromJson(getRepos.getJson(), listType);
-
-        ProjectList projectList = new ProjectList(listBeforeConvert, getRepos);
         
-        projectList.listProjects();
-        projectList.sort();
-        projectList.listProjects();
+        try{
+            User newUser = new User("Filipe-0911", apiToken);
+            ConnectApi getRepos = new ConnectApi(newUser);    
+            Type listType = new TypeToken<ArrayList<ProjectData>>() {}.getType();
+    
+            Gson gson = new GsonBuilder()
+                    .serializeNulls()
+                    .create();
+    
+            List<ProjectData> listBeforeConvert = gson.fromJson(getRepos.getJson(), listType);
+    
+            ProjectList projectList = new ProjectList(listBeforeConvert, getRepos);
+            
+            projectList.listProjects();
+            projectList.sort();
+            projectList.listProjects();
+
+        } catch(ConsultGitHubException e) {
+            System.out.println(e);
+            
+        } catch(Exception e) {
+            System.out.println(e);       
+        }finally {
+            System.out.println("Finally");
+        }
     }
 }
