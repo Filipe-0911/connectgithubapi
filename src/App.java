@@ -34,30 +34,31 @@ public class App {
         }
 
         String apiToken = properties.getProperty("API_TOKEN");
-        
-        try{
+
+        try {
             User newUser = new User("Filipe-0911", apiToken);
-            ConnectApi getRepos = new ConnectApi(newUser);    
-            Type listType = new TypeToken<ArrayList<ProjectData>>() {}.getType();
-    
+            ConnectApi getRepos = new ConnectApi(newUser);
+            Type listType = new TypeToken<ArrayList<ProjectData>>() {
+            }.getType();
+
             Gson gson = new GsonBuilder()
                     .serializeNulls()
                     .create();
-    
+
             List<ProjectData> listBeforeConvert = gson.fromJson(getRepos.getJson(), listType);
-    
+
             ProjectList projectList = new ProjectList(listBeforeConvert, getRepos);
-            
+
             projectList.listProjects();
             projectList.sort();
             projectList.listProjects();
 
-        } catch(ConsultGitHubException e) {
+        } catch (ConsultGitHubException e) {
             System.out.println(e);
-            
-        } catch(Exception e) {
-            System.out.println(e);       
-        }finally {
+
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
             System.out.println("Finally");
         }
     }
